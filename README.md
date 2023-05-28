@@ -19,9 +19,9 @@ Want to see where you stand in the land of peen, but you're kinda a dummy?! Luck
 
 ### The Binary Packages
 
-- [`cock-cli`](https://github.com/im-turn/cock-cli)
-- [`cock-tui`](https://github.com/im-turn/cock-tui)
-- [`cock-web`](https://github.com/im-turn/cock-web): COMING SOON
+- [`cock-cli`](https://crates.io/crates/cock-cli)
+- [`cock-tui`](https://crates.io/crates/cock-tui)
+- [`cock-web`](https://crates.io/crates/cock-web): COMING SOON
 
 ### The API
 
