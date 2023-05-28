@@ -1,6 +1,7 @@
 [package]
 name = "cock-lib"
 version = "1.0.0"
+license = "MIT"
 description = "Measure the power level of a peen"
 edition.workspace = true
 authors.workspace = true
