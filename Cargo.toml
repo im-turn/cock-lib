@@ -3,12 +3,10 @@ name = "cock-lib"
 version = "1.0.0"
 license = "MIT"
 description = "Measure the power level of a peen"
-edition.workspace = true
-authors.workspace = true
-keywords.workspace = true
+edition = 2021
+authors = ["turn"]
+keywords = ["cocks", "penis", "anatomy", "tier", "ranking"]
 repository = "https://github.com/im-turn/cock-lib"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-cursive.workspace = true
+cursive = "0.20.0"
