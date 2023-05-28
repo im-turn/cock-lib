@@ -32,35 +32,16 @@
 //!
 //! # TODO
 //! add more examples
-
-mod abnormalities;
-mod aesthetic;
-mod balls;
+pub mod cock_parts;
 pub mod bin_modules;
-mod circumcision;
-mod cock_handler;
-mod cock_struct;
-mod curvature;
-mod shape;
-mod size;
-mod tier;
-mod traits;
-mod user;
-mod veininess;
+pub mod cock_handler;
+pub mod cock_struct;
+pub mod user;
+pub mod traits;
+pub mod tier;
 
-pub use abnormalities::Abnormalities;
-pub use aesthetic::Aesthetic;
-pub use balls::Balls;
-pub use circumcision::Circumcision;
-pub use cock_handler::{CockHandler, CockResult};
-pub use cock_struct::CockStruct;
-pub use curvature::Curvature;
-pub use shape::Shape;
-pub use size::{
-    Size,
-    SizeType::{self, Centimeters, Inches},
-};
+pub use user::{ID, InnerUser};
+pub use traits::{GetVariants, FromString, Score};
 pub use tier::Tier;
-pub use traits::{FromString, GetVariants, Score};
-pub use user::{User as InnerUser, ID};
-pub use veininess::Veininess;
+pub use cock_struct::CockStruct;
+pub use cock_handler::{CockHandler, CockResult};

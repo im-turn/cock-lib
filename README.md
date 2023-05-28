@@ -6,12 +6,13 @@ Library for Turn's Cock Tier Evaluator.
 
 I've dissected the cock-rating task into neat, testable modules. Here's a quick breakdown:
 
-- **bin_modules (bin_modules.rs):** Our little helpers, the `bin_modules` are exclusively used within the operations of the executables and won't be found outside of this module and the `bin` files. It's where things such as the `cock_handler_build` function is located, which creates a `CockHandler` based on your personal input during the execution of the default binary `cock-tier`/`main.rs`.
+- **bin_modules (mod bin_modules):** Our little helpers, the `bin_modules` are exclusively used within the operations of the executables and won't be found outside of this module and the `bin` files. It's where things such as the `cock_handler_build` function is located, which creates a `CockHandler` based on your personal input during the execution of the default binary `cock-tier`/`main.rs`.
 - **User (user.rs):** You, the user, the cock-owner.
 - **CockStruct (cock_struct.rs):** Your magnificent (or not so magnificient) monument's blueprint, combining all its noteworthy aspects into a single entity.
 - **CockHandler (cock_handler.rs):** The gentle hands wrapping up the `User` and `CockStruct` to provide easy methods to calculate and print all the juicy details about your member.
 - **Traits (traits.rs):** These aren't your cock traits, they're various Rust traits used throughout the application.
-- **Various feature modules:** Each of these modules, like `size.rs`, `aesthetic.rs`, `balls.rs` (and others), represents a particular feature of your shlong, providing a score for several of them (a few features have no impact on ratings as of right now).
+- **Tier (tier.rs):** Enum for letter grades.
+- **cock_parts (mod cock_parts):** Each of these modules, like `size.rs`, `aesthetic.rs`, `balls.rs` (and others), represents a particular feature of your shlong, providing a score for several of them (a few features have no impact on ratings as of right now).
 
 ## Getting Rated and Library Usage :open_book: :male_detective:
 

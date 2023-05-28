@@ -1,10 +1,12 @@
 use crate::{FromString, GetVariants};
 
-/// Represents a [User] of the cock analyzer.
+/// Represents the data to be stored within the [User] enum.
+/// It contains the username and discord name of the user being
+/// analyzed.
 /// `name` field is the name of the user.
 /// `discord_name` field is the discord name of the user.
 #[derive(Debug, PartialEq, Clone)]
-pub struct User {
+pub struct InnerUser {
     pub name: String,
     pub discord_name: String,
 }
@@ -14,7 +16,7 @@ pub struct User {
 #[derive(Debug, PartialEq, Clone)]
 pub enum ID {
     Anonymous,
-    User(User),
+    User(InnerUser),
 }
 
 /// Implementing [GetVariants] for [ID] enum to provide the different variant options for [ID].
@@ -29,7 +31,7 @@ impl FromString for ID {
     fn from_string(id: &str) -> ID {
         match id {
             "Anonymous" => ID::Anonymous,
-            "User" => ID::User(User {
+            "User" => ID::User(InnerUser {
                 name: String::from(""),
                 discord_name: String::from(""),
             }),
@@ -60,7 +62,7 @@ mod tests {
 
     #[test]
     fn test_user() {
-        let user = User {
+        let user = InnerUser {
             name: String::from("S"),
             discord_name: String::from("test"),
         };
@@ -71,7 +73,7 @@ mod tests {
 
     #[test]
     fn test_id() {
-        let user = User {
+        let user = InnerUser {
             name: String::from("S"),
             discord_name: String::from("test"),
         };

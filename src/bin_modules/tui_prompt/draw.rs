@@ -8,7 +8,8 @@ use cursive::{
 
 use crate::{
     bin_modules::{AppState, UserData},
-    CockHandler, FromString, GetVariants, InnerUser, Size, SizeType, ID,
+    CockHandler, GetVariants, InnerUser, cock_parts::{Size, SizeType}, ID,
+    FromString
 };
 
 /// [TUIDisplay] is a trait for drawing screens within the TUI.

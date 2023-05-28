@@ -1,7 +1,8 @@
-use crate::{
-    Abnormalities, Aesthetic, Balls, Circumcision, Curvature, FromString, Inches, Shape, Size,
+use crate::cock_parts::{
+    Abnormalities, Aesthetic, Balls, Circumcision, Curvature, Inches, Shape, Size,
     Veininess,
 };
+use crate::FromString;
 
 /// Struct representing detailed information about a [CockStruct]. Each property of a [CockStruct]
 /// is represented by a separate field, enabling fine-grained control and accurate descriptions.
@@ -113,7 +114,7 @@ impl std::fmt::Display for CockStruct {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::Inches;
+    use crate::cock_parts::Inches;
 
     #[test]
     fn cock_struct_test() {

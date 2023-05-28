@@ -1,6 +1,13 @@
 use crate::{
-    Abnormalities, Aesthetic, Balls, Circumcision, CockStruct, Curvature, GetVariants, Shape,
-    SizeType, Veininess, ID,
+    cock_parts::{
+    Abnormalities, Aesthetic,
+    Balls, Circumcision,
+    Curvature, Shape,
+    SizeType, Veininess,
+    },
+    GetVariants,
+    ID,
+    CockStruct
 };
 
 pub mod standard_prompt;

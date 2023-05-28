@@ -58,7 +58,10 @@ pub fn choose_from_menu(choices: Vec<String>, msg: &str) -> String {
     choices.get(selection).unwrap().to_string()
 }
 
-use crate::{Abnormalities, Curvature, FromString, GetVariants, InnerUser, Size, SizeType, ID};
+use crate::{
+    cock_parts::{Abnormalities, Curvature, Size, SizeType},
+    FromString, GetVariants, InnerUser, ID
+};
 
 /// This function prompts the user to choose from a menu consisting of the variants of the type `T` and returns the `T` variant chosen.
 pub fn input<T: GetVariants + FromString>(message: &str) -> T {
@@ -106,7 +109,7 @@ pub fn clear_screen() {
     print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
 }
 
-use crate::{CockHandler, CockStruct, Shape};
+use crate::{CockHandler, CockStruct, cock_parts::Shape};
 
 /// Used to prompt a user for each necessary cock attribute and construct a CockStruct from them.
 pub fn cock_handler_build() -> CockHandler {
