@@ -1,7 +1,7 @@
 /// This module contains functions that are used in operations within main.rs and other binaries.
 
 /// This function prompts the user for input and returns the input as a string.
-pub fn prompt(msg: &str) -> String {
+fn prompt(msg: &str) -> String {
     println!("{}\n", msg);
     let mut input = String::new();
     print!(">> ");
@@ -17,7 +17,7 @@ pub fn prompt(msg: &str) -> String {
 }
 
 /// This function parses a string to an integer.
-pub fn parse_to_int(input: &str, default: i32) -> i32 {
+fn parse_to_int(input: &str, default: i32) -> i32 {
     match input.parse::<i32>() {
         Ok(n) => n,
         Err(_) => default,
@@ -25,7 +25,7 @@ pub fn parse_to_int(input: &str, default: i32) -> i32 {
 }
 
 /// This function parses a string to a float.
-pub fn parse_to_float(input: &str, default: f32) -> f32 {
+fn parse_to_float(input: &str, default: f32) -> f32 {
     match input.parse::<f32>() {
         Ok(n) => n,
         Err(_) => default,
@@ -33,7 +33,7 @@ pub fn parse_to_float(input: &str, default: f32) -> f32 {
 }
 
 /// This function prompts the user to choose from a menu and returns the choice as a string.
-pub fn choose_from_menu(choices: Vec<String>, msg: &str) -> String {
+fn choose_from_menu(choices: Vec<String>, msg: &str) -> String {
     println!("Please choose an option:\n");
 
     let choice_len = choices.len().try_into().expect("Too many choices.");
@@ -64,7 +64,7 @@ use crate::{
 };
 
 /// This function prompts the user to choose from a menu consisting of the variants of the type `T` and returns the `T` variant chosen.
-pub fn input<T: GetVariants + FromString>(message: &str) -> T {
+fn input<T: GetVariants + FromString>(message: &str) -> T {
     let choice = choose_from_menu(T::get_variants(), message);
     let variant = T::from_string(&choice);
     clear_screen();
@@ -72,7 +72,7 @@ pub fn input<T: GetVariants + FromString>(message: &str) -> T {
 }
 
 /// This function is responsible for getting the user's [ID] parameters.
-pub fn get_user() -> ID {
+fn get_user() -> ID {
     let user_type = choose_from_menu(ID::get_variants(), "ID type:");
     let user = match user_type.as_str() {
         "Anonymous" => ID::Anonymous,
@@ -90,7 +90,7 @@ pub fn get_user() -> ID {
 }
 
 /// This function is responsible for getting the cock [Size] parameters.
-pub fn get_size() -> Size {
+fn get_size() -> Size {
     let size_type = choose_from_menu(SizeType::get_variants(), "Inches or Centimeters?");
     let length = parse_to_float(prompt("Cock length:").as_str(), 0.0);
     let girth = parse_to_float(prompt("Cock girth:").as_str(), 0.0);
@@ -105,7 +105,7 @@ pub fn get_size() -> Size {
 }
 
 /// Fn to clear terminal and reset cursor position
-pub fn clear_screen() {
+fn clear_screen() {
     print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
 }
 

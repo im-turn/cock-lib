@@ -14,14 +14,15 @@ pub mod standard_prompt;
 pub mod tui_prompt;
 
 #[derive(Clone)]
-pub struct UserData {
-    pub user: ID,
-    pub cock: CockStruct,
-    pub state: AppState,
+struct UserData {
+    user: ID,
+    cock: CockStruct,
+    state: AppState,
 }
 
 impl UserData {
-    pub fn default() -> UserData {
+    #[allow(dead_code)]
+    fn default() -> UserData {
         UserData {
             user: ID::Anonymous,
             cock: CockStruct::default(),
@@ -31,7 +32,7 @@ impl UserData {
 }
 
 #[derive(Clone, Copy)]
-pub enum AppState {
+enum AppState {
     Home,
     Id,
     Abnormalities,
@@ -46,11 +47,11 @@ pub enum AppState {
 }
 
 impl AppState {
-    pub fn default() -> AppState {
+    fn default() -> AppState {
         AppState::Home
     }
 
-    pub fn options(&self) -> Vec<String> {
+    fn options(&self) -> Vec<String> {
         match self {
             AppState::Abnormalities => Abnormalities::get_variants(),
             AppState::Aesthetic => Aesthetic::get_variants(),
@@ -65,7 +66,7 @@ impl AppState {
         }
     }
 
-    pub fn as_str(&self) -> &str {
+    fn as_str(&self) -> &str {
         match self {
             AppState::Home => "Home",
             AppState::Id => "ID",
@@ -81,7 +82,7 @@ impl AppState {
         }
     }
 
-    pub fn next(&self) -> AppState {
+    fn next(&self) -> AppState {
         match self {
             AppState::Home => AppState::Id,
             AppState::Id => AppState::Size,
@@ -97,7 +98,7 @@ impl AppState {
         }
     }
 
-    pub fn prev(&self) -> AppState {
+    fn prev(&self) -> AppState {
         match self {
             AppState::Home => AppState::Home,
             AppState::Id => AppState::Home,
