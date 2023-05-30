@@ -20,9 +20,9 @@ Want to see where you stand in the land of peen, but you're kinda a dummy?! Luck
 
 ### The Binary Packages
 
-- [`cock-cli`](https://crates.io/crates/cock-cli)
-- [`cock-tui`](https://crates.io/crates/cock-tui)
-- [`cock-web`](https://crates.io/crates/cock-web): COMING SOON
+- [`cock-cli`](https://crates.io/crates/cock-cli): CLI App using the `cock_lib` library
+- [`cock-tui`](https://crates.io/crates/cock-tui): TUI App using the `cock_lib` library
+- [`cock-web`](https://crates.io/crates/cock-web): COMING SOON - WEB BACK END FOR `cock_lib`
 
 ### The API
 
@@ -56,12 +56,6 @@ let cock = CockStruct::new(
     Abnormalities::None,
 );
 ```
-
-## Dependencies
-
-The `cock-tui` relies on and is rendered using [Cursive](https://crates.io/crates/cursive).
-
-[Cursive](https://crates.io/crates/cursive) also requires the `ncurses` lib to be installed on the machine.
 
 ## Testing :petri_dish: :test_tube:
 
