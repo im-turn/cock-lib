@@ -6,7 +6,7 @@ Library for Turn's Cock Tier Evaluator.
 
 I've dissected the cock-rating task into neat, testable modules. Here's a quick breakdown:
 
-- **bin_modules (mod bin_modules):** Our little helpers, the `bin_modules` are exclusively used within the operations of the executables and won't be found outside of this module and the `bin` files. It's where things such as the `cock_handler_build` function is located, which creates a `CockHandler` based on your personal input during the execution of the default binary `cock-tier`/`main.rs`.
+- **bin_use (mod bin_use):** Responsible for anything in the library that is only intended to be used by external binaries such as [`cock-cli`](https://crates.io/crates/cock-cli) or [`cock-tui`](https://crates.io/crates/cock-tui). This currently holds a `UserData` struct as well as a `AppState` enum.
 - **User (user.rs):** You, the user, the cock-owner.
 - **CockStruct (cock_struct.rs):** Your magnificent (or not so magnificient) monument's blueprint, combining all its noteworthy aspects into a single entity.
 - **CockHandler (cock_handler.rs):** The gentle hands wrapping up the `User` and `CockStruct` to provide easy methods to calculate and print all the juicy details about your member.
@@ -30,18 +30,16 @@ You're a developer who sees the inherent value in this? Strange. However, it is 
 
 ```toml
 [dependencies]
-cock-tier = "x.x.x"
+cock-lib = "x.x.x"
 ```
 
-Below is an example of one way you could go about using API.
+Below is an example of one way you could go about using the API to create a data structure representing a cock, otherwise known as a `CockStruct`.
 
 ```rust
-use cock_tier::{
-    Abnormalities, Aesthetic, Balls, Circumcision, CockHandler, CockStruct, Curvature,
-    Shape, Size, SizeType::Inches, Tier, ID, Veininess,
+use cock_lib::{
+    CockStruct,
+    cock_parts::{Size, Aesthetic, Balls, Shape, Curvature, Circumcision, Veininess, Abnormalities, Inches}
 };
-
-let user = ID::Anonymous;
 
 let cock = CockStruct::new(
     Size {
@@ -57,13 +55,6 @@ let cock = CockStruct::new(
     Veininess::Normal,
     Abnormalities::None,
 );
-
-let handler = CockHandler { id: user, cock };
-
-// Now you can access the CockHandler's methods:
-let grade = handler.grade(); // Returns Tier::C
-let score = handler.total_score().score; // Returns 48.0
-let percentage = handler.total_score().percentage; // Returns 68.571434
 ```
 
 ## Dependencies
