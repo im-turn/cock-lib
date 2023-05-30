@@ -10,7 +10,10 @@
 //!
 //! # Example
 //! ```
-//! use lib::{CockStruct, Size, Aesthetic, Balls, Shape, Curvature, Circumcision, Veininess, Abnormalities, Inches};
+//! use cock_lib::{
+//!     CockStruct,
+//!     cock_parts::{Size, Aesthetic, Balls, Shape, Curvature, Circumcision, Veininess, Abnormalities, Inches}
+//! };
 //!
 //! let cock = CockStruct::new(
 //!     Size {
@@ -29,11 +32,10 @@
 //!
 //! // Perform your operations on `cock`
 //! ```
-//!
-//! # TODO
-//! add more examples
+//! 
+
 pub mod cock_parts;
-pub mod bin_modules;
+pub mod bin_use;
 pub mod cock_handler;
 pub mod cock_struct;
 pub mod user;

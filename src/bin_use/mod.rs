@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use crate::{
     cock_parts::{
     Abnormalities, Aesthetic,
@@ -9,9 +11,6 @@ use crate::{
     ID,
     CockStruct
 };
-
-pub mod standard_prompt;
-pub mod tui_prompt;
 
 #[derive(Clone)]
 struct UserData {
@@ -111,6 +110,23 @@ impl AppState {
             AppState::Shape => AppState::Curvature,
             AppState::Veininess => AppState::Shape,
             AppState::Result => AppState::Veininess,
+        }
+    }
+
+    #[allow(dead_code)]
+    fn to_state(&self, state: AppState) -> AppState {
+        match state {
+            AppState::Home => AppState::Home,
+            AppState::Id => AppState::Id,
+            AppState::Size => AppState::Size,
+            AppState::Abnormalities => AppState::Abnormalities,
+            AppState::Aesthetic => AppState::Aesthetic,
+            AppState::Balls => AppState::Balls,
+            AppState::Circumcision => AppState::Circumcision,
+            AppState::Curvature => AppState::Curvature,
+            AppState::Shape => AppState::Shape,
+            AppState::Veininess => AppState::Veininess,
+            AppState::Result => AppState::Result,
         }
     }
 }

@@ -1,6 +1,6 @@
 [package]
 name = "cock-lib"
-version = "1.1.0"
+version = "2.0.0"
 license = "MIT"
 description = "Measure the power level of a peen"
 edition = '2021'
@@ -9,4 +9,3 @@ keywords = ["cocks", "penis", "anatomy", "tier", "ranking"]
 repository = "https://github.com/im-turn/cock-lib"
 
 [dependencies]
-cursive = "0.20.0"
