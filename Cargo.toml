@@ -1,6 +1,6 @@
 [package]
 name = "cock-lib"
-version = "2.0.0"
+version = "2.1.0"
 license = "MIT"
 description = "Measure the power level of a peen"
 edition = '2021'

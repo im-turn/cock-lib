@@ -13,15 +13,15 @@ use crate::{
 };
 
 #[derive(Clone)]
-struct UserData {
-    user: ID,
-    cock: CockStruct,
-    state: AppState,
+pub struct UserData {
+    pub user: ID,
+    pub cock: CockStruct,
+    pub state: AppState,
 }
 
 impl UserData {
     #[allow(dead_code)]
-    fn default() -> UserData {
+    pub fn default() -> UserData {
         UserData {
             user: ID::Anonymous,
             cock: CockStruct::default(),
@@ -31,7 +31,7 @@ impl UserData {
 }
 
 #[derive(Clone, Copy)]
-enum AppState {
+pub enum AppState {
     Home,
     Id,
     Abnormalities,
@@ -46,11 +46,11 @@ enum AppState {
 }
 
 impl AppState {
-    fn default() -> AppState {
+    pub fn default() -> AppState {
         AppState::Home
     }
 
-    fn options(&self) -> Vec<String> {
+    pub fn options(&self) -> Vec<String> {
         match self {
             AppState::Abnormalities => Abnormalities::get_variants(),
             AppState::Aesthetic => Aesthetic::get_variants(),
@@ -65,7 +65,7 @@ impl AppState {
         }
     }
 
-    fn as_str(&self) -> &str {
+    pub fn as_str(&self) -> &str {
         match self {
             AppState::Home => "Home",
             AppState::Id => "ID",
@@ -81,7 +81,7 @@ impl AppState {
         }
     }
 
-    fn next(&self) -> AppState {
+    pub fn next(&self) -> AppState {
         match self {
             AppState::Home => AppState::Id,
             AppState::Id => AppState::Size,
@@ -97,7 +97,7 @@ impl AppState {
         }
     }
 
-    fn prev(&self) -> AppState {
+    pub fn prev(&self) -> AppState {
         match self {
             AppState::Home => AppState::Home,
             AppState::Id => AppState::Home,
@@ -114,7 +114,7 @@ impl AppState {
     }
 
     #[allow(dead_code)]
-    fn to_state(&self, state: AppState) -> AppState {
+    pub fn to_state(&self, state: AppState) -> AppState {
         match state {
             AppState::Home => AppState::Home,
             AppState::Id => AppState::Id,
