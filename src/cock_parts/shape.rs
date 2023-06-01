@@ -2,7 +2,7 @@ use crate::{FromString, GetVariants};
 
 /// Enum representing the [Shape] for a cock.
 /// The shapes include [Shape::Cylindrical], [Shape::Tapered] and an [Shape::Other] variant that can store a custom [Shape] description as a string.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Shape {
     Cylindrical,
     Tapered,

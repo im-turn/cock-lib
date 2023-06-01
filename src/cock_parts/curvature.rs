@@ -3,7 +3,7 @@ use crate::{FromString, GetVariants};
 /// Enum representing the direction of [Curvature] for a cock.
 /// This includes directions [Curvature::Straight], [Curvature::Left], [Curvature::Right], [Curvature::Upwards], [Curvature::Downwards], and [Curvature::Other].
 /// There's also an [Curvature::Other] variant that can store a custom description as a string.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Curvature {
     Straight,
     Left,

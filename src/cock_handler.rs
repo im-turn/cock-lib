@@ -2,7 +2,7 @@ use crate::{CockStruct, Score, Tier, ID};
 
 /// This struct encapsulates the result of a score calculation, [CockResult].
 /// It includes the raw score and the percentage score.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub struct CockResult {
     pub score: f32,
     pub percentage: f32,
@@ -10,7 +10,7 @@ pub struct CockResult {
 
 /// This struct handles all operations related to the [CockStruct] entity.
 /// It keeps track of an identifier and the [CockStruct] itself.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Deserialize)]
 pub struct CockHandler {
     pub id: ID,
     pub cock: CockStruct,

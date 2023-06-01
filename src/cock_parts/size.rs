@@ -1,7 +1,7 @@
 use crate::{FromString, GetVariants, Score};
 
 /// [SizeType] is an enum that represents the metric of measurement for the cocks [Size]
-#[derive(Debug, PartialEq, Clone, Copy)]
+#[derive(Debug, PartialEq, Clone, Copy, serde::Deserialize)]
 pub enum SizeType {
     Centimeters,
     Inches,
@@ -26,7 +26,7 @@ impl FromString for SizeType {
 }
 
 /// [Size] is a struct that represents the size of a cock.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Deserialize)]
 pub struct Size {
     pub length: f32,
     pub girth: f32,

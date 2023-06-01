@@ -5,7 +5,7 @@ use crate::{FromString, GetVariants};
 /// analyzed.
 /// `name` field is the name of the user.
 /// `discord_name` field is the discord name of the user.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub struct InnerUser {
     pub name: String,
     pub discord_name: String,
@@ -13,7 +13,7 @@ pub struct InnerUser {
 
 /// Represents a unique identifier for a user, their [ID].
 /// Variants include an anonymous identifier or a specific user.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum ID {
     Anonymous,
     User(InnerUser),

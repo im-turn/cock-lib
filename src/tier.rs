@@ -1,7 +1,7 @@
 use crate::{FromString, GetVariants};
 
 /// The [Tier] enum represents the grade given to a cock.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Tier {
     S,
     A,

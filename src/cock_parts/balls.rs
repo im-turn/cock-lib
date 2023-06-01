@@ -1,7 +1,7 @@
 use crate::{FromString, GetVariants, Score};
 
 /// [Balls] is an enum that represents the size of the balls.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Balls {
     NonExistant,
     Tiny,

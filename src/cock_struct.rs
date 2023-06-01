@@ -6,7 +6,7 @@ use crate::FromString;
 
 /// Struct representing detailed information about a [CockStruct]. Each property of a [CockStruct]
 /// is represented by a separate field, enabling fine-grained control and accurate descriptions.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Deserialize)]
 pub struct CockStruct {
     pub size: Size,
     pub aesthetic: Aesthetic,

@@ -1,7 +1,7 @@
 use crate::{FromString, GetVariants};
 
 /// [Circumcision] is an enum that represents the circumcision status of a cock.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Circumcision {
     Circumcised,
     Uncircumcised,

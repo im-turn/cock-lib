@@ -2,7 +2,7 @@ use crate::{FromString, GetVariants, Score};
 
 /// Represents the level of [Veininess] of a cock.
 /// This is an enum with five possible values: [Veininess::Invisible], [Veininess::SlightPumper], [Veininess::Normal], [Veininess::HealthyPumper], and [Veininess::Juicer].
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Veininess {
     Invisible,
     SlightPumper,

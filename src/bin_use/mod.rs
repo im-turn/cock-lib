@@ -9,10 +9,10 @@ use crate::{
     },
     GetVariants,
     ID,
-    CockStruct
+    CockStruct, FromString
 };
 
-#[derive(Clone)]
+#[derive(Clone, serde::Deserialize)]
 pub struct UserData {
     pub user: ID,
     pub cock: CockStruct,
@@ -30,7 +30,7 @@ impl UserData {
     }
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, serde::Deserialize)]
 pub enum AppState {
     Home,
     Id,
@@ -113,7 +113,6 @@ impl AppState {
         }
     }
 
-    #[allow(dead_code)]
     pub fn to_state(&self, state: AppState) -> AppState {
         match state {
             AppState::Home => AppState::Home,
@@ -128,5 +127,9 @@ impl AppState {
             AppState::Veininess => AppState::Veininess,
             AppState::Result => AppState::Result,
         }
+    }
+
+    pub fn to_part<T: GetVariants + FromString>(&self, part: &str) -> T {
+        T::from_string(part)
     }
 }

@@ -1,6 +1,6 @@
 //! A library for comprehensive grading of cocks.
 //!
-//! `cock-tier` provides a modular, extensible, and detailed system for
+//! `cock-lib` provides a modular, extensible, and detailed system for
 //! grading and classifying cocks based on various metrics.
 //!
 //! This library allows users to:
@@ -8,7 +8,7 @@
 //! - Easily extend the functionality by adding new grading methods.
 //! - Obtain a comprehensive summary of the cocks score, grade, stats, etc.
 //!
-//! # Example
+//! # Simple Example
 //! ```
 //! use cock_lib::{
 //!     CockStruct,

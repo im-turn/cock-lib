@@ -1,7 +1,7 @@
 use crate::{FromString, GetVariants, Score};
 
 /// The [Abnormalities] enum represents the different types of abnormalities of the cock.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Abnormalities {
     None,
     Minor(String),

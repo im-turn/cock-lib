@@ -1,7 +1,7 @@
 use crate::{FromString, GetVariants, Score};
 
 /// /// The [Aesthetic] enum represents different aesthetic values of a cock.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, serde::Deserialize)]
 pub enum Aesthetic {
     JustChopItOff,
     TooBigToBeFunctional,
