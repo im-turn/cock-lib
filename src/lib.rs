@@ -35,7 +35,6 @@
 //! 
 
 pub mod cock_parts;
-pub mod bin_use;
 pub mod cock_handler;
 pub mod cock_struct;
 pub mod user;
@@ -47,3 +46,6 @@ pub use traits::{GetVariants, FromString, Score};
 pub use tier::Tier;
 pub use cock_struct::CockStruct;
 pub use cock_handler::{CockHandler, CockResult};
+
+#[cfg(feature = "bin_use")]
+pub mod bin_use;

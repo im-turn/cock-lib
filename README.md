@@ -14,6 +14,10 @@ I've dissected the cock-rating task into neat, testable modules. Here's a quick 
 - **Tier (tier.rs):** Enum for letter grades.
 - **cock_parts (mod cock_parts):** Each of these modules, like `size.rs`, `aesthetic.rs`, `balls.rs` (and others), represents a particular feature of your shlong, providing a score for several of them (a few features have no impact on ratings as of right now).
 
+### Optional Feature Modules
+
+- **bin_use (mod bin_use):** Responsible for anything in the library that is only intended to be used by external binaries such as [`cock-cli`](https://crates.io/crates/cock-cli) or [`cock-tui`](https://crates.io/crates/cock-tui). This currently holds a `UserData` struct as well as a `AppState` enum.
+
 ## Getting Rated and Library Usage :open_book: :male_detective:
 
 Want to see where you stand in the land of peen, but you're kinda a dummy?! Luckily I'm here to guide you through the process.
